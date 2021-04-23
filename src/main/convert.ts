@@ -7,7 +7,7 @@ const convert = <Context, Before, After>(
   (context) => {
     const result = combinator(context);
     if (!result.ok) return result;
-    return Combinator.ok(context, func(result.get, result.context));
+    return Combinator.ok(result.context, func(result.get, result.context));
   };
 
 export default convert;

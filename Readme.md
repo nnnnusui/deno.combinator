@@ -29,10 +29,7 @@ const same = (char: string): Parser =>
     const result = any(context);
     if (!result.ok) return result;
     if (result.get !== char) {
-      return Combinator.err(
-        context,
-        `${result.get} should be ${char}`,
-      );
+      return Combinator.err(context, `same: ${result.get} should be ${char}`);
     }
     return result;
   };

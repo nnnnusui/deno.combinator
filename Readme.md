@@ -4,12 +4,20 @@ Provides combinator functions.
 
 Use in combination. For example as Parser.
 
-# Example
+## Example
+`import_map.json`
+```json
+{
+  "imports": {
+    "combinator/": "https://deno.land/x/combinator@vx.x.x/"
+  }
+}
+```
 
 First, Define the small combinator units.
 
 ```typescript
-import Combinator from "../main/type/Combinator.ts";
+import Combinator from "combinator/mod.ts";
 
 type Context<Src> = {
   src: Src;
@@ -38,11 +46,7 @@ const same = (char: string): Parser =>
 Next, Use combinator functions.
 
 ```typescript
-import chain from "../main/chain.ts";
-import convert from "../main/convert.ts";
-import not from "../main/not.ts";
-import option from "../main/option.ts";
-import repeat from "../main/repeat.ts";
+import { chain, convert, not, option, repeat } from "combinator/mod.ts";
 
 const eol = same("\n");
 const notEol = convert(chain(not(eol), any), ([, it]) => it);

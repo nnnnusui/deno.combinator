@@ -10,5 +10,5 @@ export * from "./src/main/use.ts";
 
 export * from "./src/main/extension/chainL.ts";
 export * from "./src/main/extension/chainN.ts";
-// export * from "./src/main/chainR.ts";
+export * from "./src/main/extension/chainR.ts";
 export * from "./src/main/extension/orN.ts";

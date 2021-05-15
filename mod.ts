@@ -1,11 +1,13 @@
-import Combinator from "./src/main/type/Combinator.ts";
-import chain from "./src/main/chain.ts";
-import convert from "./src/main/convert.ts";
-import not from "./src/main/not.ts";
-import option from "./src/main/option.ts";
-import or from "./src/main/or.ts";
-import repeat from "./src/main/repeat.ts";
-import use from "./src/main/use.ts";
-
-export default Combinator;
-export { chain, convert, not, option, or, repeat, use };
+export * from "./src/main/type/Combinator.ts";
+export * from "./src/main/chain.ts";
+// export * from "./src/main/chainL.ts";
+// export * from "./src/main/chainN.ts";
+// export * from "./src/main/chainR.ts";
+export * from "./src/main/convert.ts";
+// export * from "./src/main/lazy.ts";
+export * from "./src/main/not.ts";
+export * from "./src/main/option.ts";
+export * from "./src/main/or.ts";
+// export * from "./src/main/orN.ts";
+export * from "./src/main/repeat.ts";
+export * from "./src/main/use.ts";

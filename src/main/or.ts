@@ -1,6 +1,6 @@
-import Combinator from "./type/Combinator.ts";
+import { Combinator } from "./type/Combinator.ts";
 
-const or = <Context, Lhs, Rhs>(
+export const or = <Context, Lhs, Rhs>(
   lhs: Combinator<Context, Lhs>,
   rhs: Combinator<Context, Rhs>,
 ): Combinator<Context, Lhs | Rhs> =>
@@ -11,5 +11,3 @@ const or = <Context, Lhs, Rhs>(
     if (rhsResult.ok) return rhsResult;
     return Combinator.err(context, "or", [lhsResult.get, rhsResult.get]);
   };
-
-export default or;

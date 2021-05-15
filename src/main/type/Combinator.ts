@@ -27,4 +27,4 @@ const Combinator = {
   }),
 };
 
-export default Combinator;
+export { Combinator };

@@ -1,22 +1,25 @@
-import Combinator, { OnError } from "./type/Combinator.ts";
+import { Combinator, OnError } from "./type/Combinator.ts";
 
-const repeat = <Context, T>(
+const checkArgumentsState = (must: number, to: number) => {
+  if (to < 1) {
+    throw new Error(
+      `This repeat() always fails. { to: ${to} } Must be greater than 1.`,
+    );
+  }
+  if (to < must) {
+    throw new Error(
+      `This repeat() always fails. { to: ${to} } Must be greater than { must: ${must} }.`,
+    );
+  }
+};
+
+export const repeat = <Context, T>(
   combinator: Combinator<Context, T>,
-  must: number = 1,
+  must = 1,
   to?: number,
 ): Combinator<Context, T[]> => {
-  if (to != undefined) {
-    if (to < 1) {
-      throw new Error(
-        `This repeat() always fails. { to: ${to} } Must be greater than 1.`,
-      );
-    }
-    if (to < must) {
-      throw new Error(
-        `This repeat() always fails. { to: ${to} } Must be greater than { must: ${must} }.`,
-      );
-    }
-  }
+  if (to !== undefined) checkArgumentsState(must, to);
+
   const recursion = (
     context: Context,
     results: T[],
@@ -38,5 +41,3 @@ const repeat = <Context, T>(
     return Combinator.ok(afterContext, result);
   };
 };
-
-export default repeat;

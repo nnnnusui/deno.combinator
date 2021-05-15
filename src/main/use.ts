@@ -1,6 +1,6 @@
-import Combinator from "./type/Combinator.ts";
+import { Combinator } from "./type/Combinator.ts";
 
-const use = <Context, Middle, T>(
+export const use = <Context, Middle, T>(
   from: Combinator<Context, Middle>,
   user: (from: Middle) => Combinator<Context, T> | null,
 ): Combinator<Context, T> =>
@@ -16,5 +16,3 @@ const use = <Context, Middle, T>(
     }
     return uses(fromResult.context);
   };
-
-export default use;

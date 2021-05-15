@@ -8,7 +8,7 @@ export * from "./src/main/or.ts";
 export * from "./src/main/repeat.ts";
 export * from "./src/main/use.ts";
 
-// export * from "./src/main/chainL.ts";
+export * from "./src/main/extension/chainL.ts";
 export * from "./src/main/extension/chainN.ts";
 // export * from "./src/main/chainR.ts";
 export * from "./src/main/extension/orN.ts";

@@ -1,12 +1,12 @@
-import { Combinator } from "./type/Combinator.ts";
-import { chain } from "./chain.ts";
-import { convert } from "./convert.ts";
+import { Combinator } from "../type/Combinator.ts";
+import { chain } from "../chain.ts";
+import { convert } from "../convert.ts";
 import {
   AnyCombinators,
   Combinators,
   ContextFrom,
   Tupled,
-} from "./type/Combinators.ts";
+} from "../type/Combinators.ts";
 
 export const chainN = <T extends AnyCombinators>(
   ...combinators: T

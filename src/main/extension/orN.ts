@@ -1,11 +1,11 @@
-import { Combinator } from "./type/Combinator.ts";
-import { or } from "./or.ts";
+import { Combinator } from "../type/Combinator.ts";
+import { or } from "../or.ts";
 import {
   AnyCombinators,
   Combinators,
   ContextFrom,
   Unified,
-} from "./type/Combinators.ts";
+} from "../type/Combinators.ts";
 
 export const orN = <T extends AnyCombinators>(
   ...combinators: T

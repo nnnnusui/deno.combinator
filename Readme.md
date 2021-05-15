@@ -17,7 +17,7 @@ Use in combination. For example as Parser.
 First, Define the small combinator units.
 
 ```typescript
-import Combinator from "combinator/mod.ts";
+import { Combinator } from "combinator/mod.ts";
 
 type Context<Src> = {
   src: Src;
